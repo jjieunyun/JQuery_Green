@@ -1,0 +1,13 @@
+#start_button {
+    display: inline-block;
+    background-color: rgb(255,255,255);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+#start_button:hover {
+    background-color: darkorange;
+}
+
+
+
