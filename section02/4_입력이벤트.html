@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    
+    <form>
+        <input type="text" id="change">
+
+        <select name="" id="select">
+            <option value="apple">사과</option>
+            <option value="orange">오렌지</option>
+        </select>
+    </form>
+    <p id="select_p"></p>
+    <h3>input의 focus와 blur에 따라 배경색이 달라집니다</h3>
+    <form>
+        <input type="text" id="id">
+    </form>
+
+    <script>
+        //입력양식 이벤트 메소드
+        // focus, blur, submit 이벤트를 사용 할 수있다.
+        $("#change").on("change", function(){
+            $(this).css("color","red");
+        });
+
+        $("#select").on("select", function() {
+            $("#select_p").append("선택되었습니다<br>");
+        });
+
+        //focus와 blur를 사용하여 input의 배경을 바꾸세요.
+        $("#id").on({
+            focus : function()
+            $(this).css("backgroundColor","yellow");
+        },
+            blur :  function(){
+            $(this).css("backgroundColor","white");
+        });
+
+        //타입검사 메소드      
+    </script>
+</body>
+</html>

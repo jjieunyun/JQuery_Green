@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키 이벤트</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <input type="text" name="" id="text_input">
+    <p id="key"></p>
+
+    <h1>키보드를 누르면 화면에 보입니다. 단 영어만가능</h1>
+    <p id="p"></p>
+    <script>
+        //키 이벤트에서 사용할 수 있는 이벤트 타입
+        //keypress, keyup, key
+        $("#text_input").on("keydown", function(e){
+            $("#key").text(e.key);  //key -위치값 대신에 key값을 출력함
+        });
+
+        $("body").on("keydown", function(e){
+            $("#p").text(e.key);
+        });
+    </script>
+</body>
+</html>
