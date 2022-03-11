@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이펙트효과제어</title>
+    <style>
+        #div_box,  #div_box2 {
+            height: 100px;
+            width: 100px;
+            border: solid 2px darkblue;
+            margin-top: 10px;
+            background-color: lightblue;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!--버튼3개-->
+    <!--slideToggle버튼 :클릭-->
+    <button id="slideToggle_button">이펙트효과 버튼입니다</button>
+    <!--stop()버튼-->
+    <button id="stop_button">이펙트 중지</button>
+    <!--finish버튼-->
+    <button id="finish_button">이펙트 끝내기</button>
+
+    <!--아래 div제어-->
+    <div id="div_box"></div>
+    <br><br>
+    <!--사용자정의 애니메이션-->
+    <button id="animate">사용자 애니메이션</button>
+    <div id="div_box2"></div>
+    <!--스크립트-->
+    <script>
+        //1. 이펙트제어
+        $("#slideToggle_button").on("click",function(){
+            $("#div_box").slideToggle(5000);
+        });
+
+        $("#stop_button").on("click",function(){
+            $("#div_box").stop();
+        });
+
+        $("#finish_button").on("click",function(){
+            $("#div_box").finish();
+        });
+
+        //2. 사용자 정의 이펙트 (animate)
+        $("#animate").on("click", function(){
+            $("#div_box2").animate({
+                // CSS 속성과 값(끝날때)
+                opacity : 0,  
+                width: 0,
+                height: 0
+            }, 1000,      //진행되는 밀리초
+            function(){  //애니메이션이 끝났을  때 실행되는 함수
+                $("#animate").text("이벤트가 끝났습니다.");
+            })
+        });
+    </script>
+</body>
+</html>
+

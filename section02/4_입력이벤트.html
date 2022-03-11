@@ -21,7 +21,7 @@
     <p id="select_p"></p>
     <h3>input의 focus와 blur에 따라 배경색이 달라집니다</h3>
     <form>
-        <input type="text" id="id">
+        <input type="text" id="focus">
     </form>
 
     <script>
@@ -30,18 +30,19 @@
         $("#change").on("change", function(){
             $(this).css("color","red");
         });
-
-        $("#select").on("select", function() {
+        $("#select").on("select",function(){
             $("#select_p").append("선택되었습니다<br>");
         });
+        
 
         //focus와 blur를 사용하여 input의 배경을 바꾸세요.
-        $("#id").on({
-            focus : function()
-            $(this).css("backgroundColor","yellow");
-        },
-            blur :  function(){
-            $(this).css("backgroundColor","white");
+        $("#focus").on({
+            focus : function(){
+                $(this).css("background-color","yellow");
+            },
+            blur : function(){
+                $(this).css("background-color","white");
+            }
         });
 
         //타입검사 메소드      
